@@ -1,4 +1,3 @@
-from pywebio import *
 from pywebio.input import FLOAT, file_upload,input, select, input_group
 from pywebio.output import put_text,put_image, style
 from PIL import Image, ImageDraw, ImageSequence,ImageFont
@@ -25,7 +24,7 @@ def GIF_Genrator(GIF_PATH,data,themenum):
 
 
 info = input_group("User info",[input("Enter your name ",name = "name"),
-select('Which gift you want?', ['Select any Festival','Independence Day','Ganesh Chaturthi','Dussehra','Deepawali','Christmas','Republic Day','Holi'],name = "event"), 
+select('Select any Wisher Theme', [' ','Independence Day','Ganesh Chaturthi','Dussehra','Deepawali','Christmas','Republic Day','Holi'],name = "event"), 
 file_upload("Select a image:", accept="image/*",name = "img")])
 
 image = Image.open(io.BytesIO(bytearray(info['img']['content'])))
